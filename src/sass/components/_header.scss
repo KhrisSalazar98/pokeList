@@ -1,0 +1,9 @@
+header, .modal-header {
+    background-color: $color_principal;
+    -webkit-box-shadow: $sombra_nav; 
+    box-shadow: $sombra_nav;
+}
+
+header h1 {
+    color: $negro;
+}

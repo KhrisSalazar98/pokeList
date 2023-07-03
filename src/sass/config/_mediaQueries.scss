@@ -1,0 +1,37 @@
+@media (min-width: 200px) {
+    .pokeName_title {
+        font-size: 0.8rem;
+    }
+
+    .img_pokeList {
+        width: 60px;
+    }
+}
+
+@media (min-width: 450px) {
+    .pokeName_title {
+        font-size: 1rem;
+    }
+
+    .img_pokeList {
+        width: 100px;
+    }
+}
+
+@media (min-width: 575px) {
+    .img_pokeList {
+        width: 140px;
+    }
+}
+
+
+@media (min-width: 992px) {
+
+    .pokeName_title {
+        font-size: 1.5rem;
+    }
+
+    .img_pokeList {
+        width: 180px;
+    }
+}

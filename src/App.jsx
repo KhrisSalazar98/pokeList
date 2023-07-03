@@ -1,12 +1,16 @@
 import React from 'react';
 import './sass/style.scss';
+import Header from './components/Header';
+import ListPokemon from "./components/List";
 
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World!</h1>  
-    </div>
+    <>
+      <Header />
+      <ListPokemon />
+    </>
+    
   );
 }
 

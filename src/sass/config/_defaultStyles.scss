@@ -1,4 +1,14 @@
 
 body {
-    font-family: $family;    
+    font-family: $family;
+    background-color: $color_secundario;    
+}
+
+
+.modal-header, .modal-footer {
+    border: none;
+}
+
+.modal-content{
+    background-color: $color_secundario;
 }
