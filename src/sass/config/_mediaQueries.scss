@@ -3,6 +3,12 @@
         display: none;
     }
 
+    .input_search {
+        -webkit-box-shadow: $sombra_input_search; 
+        box-shadow: $sombra_input_search;
+        width: 82%;
+    }
+
     .pokeName_title {
         font-size: 0.8rem;
     }
@@ -39,6 +45,10 @@
         font-size: 1rem;
     }
 
+    .input_search {
+        width: 55%;
+    }
+
     .img_pokeList {
         width: 100px;
     }
@@ -61,6 +71,10 @@
         width: 140px;
     }
 
+    .input_search {
+        width: 35%;
+    }
+
     .carousel-item img {
         width: 160px
     }
@@ -75,6 +89,10 @@
 
     .pokeName_title {
         font-size: 1.5rem;
+    }
+
+    .input_search {
+        width: 25%;
     }
 
     .img_pokeList {

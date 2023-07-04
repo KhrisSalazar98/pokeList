@@ -4,6 +4,10 @@ body {
     background-color: $color_secundario;    
 }
 
+input:focus {
+    outline: none;
+}
+
 .btn_cerrar {
     background-color: $color_principal;
     color: $color_secundario;
@@ -37,6 +41,10 @@ body {
 
 .hr_modal {
     color: $color_principal;
+}
+
+.input_search::placeholder {
+    font-style: italic;
 }
 
 .modal-header, .modal-footer {

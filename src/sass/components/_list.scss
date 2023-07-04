@@ -18,6 +18,18 @@
     animation: cardHover_animation 3s ease-out infinite;
 }
 
+.btn_search {
+    background-color: $color_principal;
+    color: $color_secundario;
+    -webkit-box-shadow: $sombra_btn_search; 
+    box-shadow: $sombra_btn_search;
+    @include transition_elements();
+}
+
+.btn_search:hover {
+    filter: brightness(200%);
+}
+
 .btn_verPokemon {
     background-color: transparent;
     color: $color_secundario;

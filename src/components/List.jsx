@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 import { verPokemon, verDetallesPokemon } from "../redux/features/pokemon/pokemonSlice";
 
@@ -26,6 +26,10 @@ const List = () => {
     const handleViewPokemon = (name) => {
         dispatch(verDetallesPokemon(name));
     }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
     
 
     return (
@@ -36,6 +40,15 @@ const List = () => {
                 <>
             
                     <div className='container my-5'>
+
+                        <div className='my-5'>
+                            <form onSubmit={handleSubmit}>
+                                <input className="border-0 px-3 py-2 rounded-start input_search" type="text" placeholder='Buscar por nombre' />
+                                <button type='submit' className='border-0 px-3 py-2 rounded-end btn_search'><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
+                            </form>
+                        </div>
+                        <br />
+
                         <div className='row mt-5'>
                             {pokemonData.map((pokemon, index) => (
                                 <div key={index} className='col-6 col-sm-6 col-md-4 mb-4'>
