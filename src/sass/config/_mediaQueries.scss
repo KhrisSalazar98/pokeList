@@ -1,10 +1,36 @@
 @media (min-width: 200px) {
+    .icon_modal_title {
+        display: none;
+    }
+
     .pokeName_title {
         font-size: 0.8rem;
     }
 
     .img_pokeList {
         width: 60px;
+    }
+
+    .btn_verPokemon .span_txtBtnVerPokemon {
+        display: none;
+    }
+
+    .carousel-item img {
+        width: 80px
+    }
+
+    .stat {
+        height: 80px;
+    }
+
+    .txt_heigthWidth {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 220px) {
+    .icon_modal_title {
+        display: inline;
     }
 }
 
@@ -16,11 +42,31 @@
     .img_pokeList {
         width: 100px;
     }
+
+    .btn_verPokemon .span_txtBtnVerPokemon {
+        display: inline;
+    }
+
+    .carousel-item img {
+        width: 120px
+    }
+
+    .stat {
+        height: 120px;
+    }
 }
 
 @media (min-width: 575px) {
     .img_pokeList {
         width: 140px;
+    }
+
+    .carousel-item img {
+        width: 160px
+    }
+
+    .stat {
+        height: 160px;
     }
 }
 
@@ -33,5 +79,17 @@
 
     .img_pokeList {
         width: 180px;
+    }
+
+    .carousel-item img {
+        width: 200px
+    }
+
+    .stat {
+        height: 200px;
+    }
+
+    .txt_heigthWidth {
+        font-size: 1.2rem;
     }
 }

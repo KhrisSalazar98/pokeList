@@ -45,7 +45,7 @@ const List = () => {
                                             <img className='img_pokeList' src={imgs[index]} alt={pokemon.name} />
                                         </div>
                                         <div className='my-4 text-center'>
-                                            <button value={pokemon.name} onClick={(e) => handleViewPokemon(e.target.value)} className='px-3 py-2 rounded-pill btn_verPokemon' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><FontAwesomeIcon icon={faEye} /> Ver Pokemon</button>
+                                            <button onClick={() => handleViewPokemon(pokemon.name)} className='px-2 px-sm-3 py-sm-2 rounded-pill btn_verPokemon' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><span className='span_icon'><FontAwesomeIcon icon={faEye} /></span> <span className='span_txtBtnVerPokemon'>Ver Pokemon</span></button>
                                         </div>
                                     </div>
                                 

@@ -24,7 +24,7 @@ export const verPokemon = createAsyncThunk(
 export const verDetallesPokemon = createAsyncThunk(
     "verDetallesPokemon",
     async (data, { rejectWithValue }) => {
-     
+    
         const response = await fetch(
             `https://pokeapi.co/api/v2/pokemon/${data}`
         );
