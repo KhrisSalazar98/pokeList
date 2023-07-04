@@ -48,9 +48,14 @@ export const pokemonSlice = createSlice({
         loading: false,
         error: null,
         searchData: null,
-        searchResult: []
+        searchList: []
     },
 
+    reducers: {
+        searchResult : (state, action) => {
+            state.searchList = action.payload;
+        }
+    },
 
     extraReducers : {
         //ver pokemon extraReducers
@@ -78,3 +83,4 @@ export const pokemonSlice = createSlice({
 });
 
 export default pokemonSlice.reducer;
+export const {searchResult} = pokemonSlice.actions;
