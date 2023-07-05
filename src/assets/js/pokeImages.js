@@ -171,3 +171,26 @@ export const imgs = [
     // poke_141, poke_142, poke_143, poke_144, poke_145, poke_146, poke_147, poke_148, poke_149, poke_150,
     // poke_151, poke_152   
 ];
+
+const imgs2 = [
+    {name: "bulbasaur",img: poke_1},{name: "ivysaur",img: poke_2},{name: "venusaur",img: poke_3},
+    {name: "charmander",img: poke_4},{name: "charmeleon",img: poke_5},{name: "charizard",img: poke_6},
+    {name: "squirtle",img: poke_7},{name: "wartortle",img: poke_8},{name: "blastoise",img: poke_9},
+    {name: "caterpie",img: poke_10},{name: "metapod",img: poke_11},{name: "butterfree",img: poke_12},
+    {name: "weedle",img: poke_13},{name: "kakuna",img: poke_14},{name: "beedrill",img: poke_15},
+    {name: "pidgey",img: poke_16},{name: "pidgeotto",img: poke_17},{name: "pidgeot",img: poke_18},
+    {name: "rattata",img: poke_19},{name: "raticate",img: poke_20},{name: "spearow",img: poke_21},
+    {name: "fearow",img: poke_22},{name: "ekans",img: poke_23},{name: "arbok",img: poke_24},
+    {name: "pikachu",img: poke_25},{name: "raichu",img: poke_26},{name: "sandshrew",img: poke_27},
+    {name: "sandslash",img: poke_28},{name: "nidoran-f",img: poke_29},{name: "nidorina",img: poke_30},
+    {name: "nidoqueen",img: poke_31},{name: "nidoran-m",img: poke_32},{name: "nidorino",img: poke_33},
+    {name: "nidoking",img: poke_34},{name: "clefairy",img: poke_35},{name: "clefable",img: poke_36},
+    {name: "vulpix",img: poke_37},{name: "ninetales",img: poke_38},{name: "jigglypuff",img: poke_39},
+    {name: "wigglytuff",img: poke_40},{name: "zubat",img: poke_41},{name: "golbat",img: poke_42},
+    {name: "oddish",img: poke_43},{name: "gloom",img: poke_44},{name: "vileplume",img: poke_45},
+    {name: "paras",img: poke_46},{name: "parasect",img: poke_47},{name: "venonat",img: poke_48},
+    {name: "venomoth",img: poke_49},{name: "diglett",img: poke_50},{name: "dugtrio",img: poke_51},
+    {name: "meowth",img: poke_52},{name: "persian",img: poke_53},{name: "psyduck",img: poke_54},
+    {name: "golduck",img: poke_55},{name: "mankey",img: poke_56},{name: "primeape",img: poke_57},
+    {name: "growlithe",img: poke_58},{name: "arcanine",img: poke_59}
+];
