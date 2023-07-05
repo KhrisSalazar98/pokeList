@@ -9,7 +9,7 @@ import { verPokemon, verDetallesPokemon, searchResult } from "../redux/features/
 
 import Loading from '../components/Loading';
 
-import {imgs} from "../assets/js/pokeImages";
+import {imgs, imgs2} from "../assets/js/pokeImages";
 import ModalVerPokemon from './ModalVerPokemon';
 
 const List = () => {
@@ -72,9 +72,8 @@ const List = () => {
                                         <div className='rounded-3 pokeCard py-2'>
                                             <h3 className='text-center py-3 pokeName_title'>{pokemon.name}</h3>
                                             <div className='text-center'>
-                                                <img className='img_pokeList' src={imgs[index]} alt={pokemon.name} />
+                                                <img className='img_pokeList' src={imgs.filter((pokeImg) => pokeImg.name === pokemon.name)[0].img} alt={pokemon.name} />
                                             </div>
-                                            <span>{console.log(pokemon)}</span>
                                             <div className='my-4 text-center'>
                                                 <button onClick={() => handleViewPokemon(pokemon.name)} className='px-2 px-sm-3 py-sm-2 rounded-pill btn_verPokemon' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><span className='span_icon'><FontAwesomeIcon icon={faEye} /></span> <span className='span_txtBtnVerPokemon'>Ver Pokemon</span></button>
                                             </div>

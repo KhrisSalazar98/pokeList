@@ -122,7 +122,7 @@ const ModalVerPokemon = () => {
                                     </div>
 
                                     <div className='col-12 col-sm-6 col-md-6 mb-3 d-flex justify-content-center flex-column'>
-                                        <img className='img_pokeList' src={imgs[searchData.id-1]} alt={searchData.name} />
+                                        <img className='img_pokeList' src={imgs.filter((pokeImg) => pokeImg.name === searchData.name)[0].img} alt={searchData.name} />
                                         <span>ID: {searchData.id}</span>
                                         <span>Nombre: {searchData.name}</span>   
                                     </div>

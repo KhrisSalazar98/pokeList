@@ -153,26 +153,6 @@ import poke_59 from '../img/poke_59.png';
 
 
 export const imgs = [
-    poke_1, poke_2, poke_3, poke_4, poke_5, poke_6, poke_7, poke_8, poke_9, poke_10,
-    poke_11, poke_12, poke_13, poke_14, poke_15, poke_16, poke_17, poke_18, poke_19, poke_20,
-    poke_21, poke_22, poke_23, poke_24, poke_25, poke_26, poke_27, poke_28, poke_29, poke_30,
-    poke_31, poke_32, poke_33, poke_34, poke_35, poke_36, poke_37, poke_38, poke_39, poke_40,
-    poke_41, poke_42, poke_43, poke_44, poke_45, poke_46, poke_47, poke_48, poke_49, poke_50,
-    poke_51, poke_52, poke_53, poke_54, poke_55, poke_56, poke_57, poke_58, poke_59, 
-    // poke_60,
-    // poke_61, poke_62, poke_63, poke_64, poke_65, poke_66, poke_67, poke_68, poke_69, poke_70,
-    // poke_71, poke_72, poke_73, poke_74, poke_75, poke_76, poke_77, poke_78, poke_79, poke_80,
-    // poke_81, poke_82, poke_83, poke_84, poke_85, poke_86, poke_87, poke_88, poke_89, poke_90,
-    // poke_91, poke_92, poke_93, poke_94, poke_95, poke_96, poke_97, poke_98, poke_99, poke_100,
-    // poke_101, poke_102, poke_103, poke_104, poke_105, poke_106, poke_107, poke_108, poke_109, poke_110,
-    // poke_111, poke_112, poke_113, poke_114, poke_115, poke_116, poke_117, poke_118, poke_119, poke_120,
-    // poke_121, poke_122, poke_123, poke_124, poke_125, poke_126, poke_127, poke_128, poke_129, poke_130,
-    // poke_131, poke_132, poke_133, poke_134, poke_135, poke_136, poke_137, poke_138, poke_139, poke_140,
-    // poke_141, poke_142, poke_143, poke_144, poke_145, poke_146, poke_147, poke_148, poke_149, poke_150,
-    // poke_151, poke_152   
-];
-
-const imgs2 = [
     {name: "bulbasaur",img: poke_1},{name: "ivysaur",img: poke_2},{name: "venusaur",img: poke_3},
     {name: "charmander",img: poke_4},{name: "charmeleon",img: poke_5},{name: "charizard",img: poke_6},
     {name: "squirtle",img: poke_7},{name: "wartortle",img: poke_8},{name: "blastoise",img: poke_9},
@@ -193,4 +173,6 @@ const imgs2 = [
     {name: "meowth",img: poke_52},{name: "persian",img: poke_53},{name: "psyduck",img: poke_54},
     {name: "golduck",img: poke_55},{name: "mankey",img: poke_56},{name: "primeape",img: poke_57},
     {name: "growlithe",img: poke_58},{name: "arcanine",img: poke_59}
+  
 ];
+
