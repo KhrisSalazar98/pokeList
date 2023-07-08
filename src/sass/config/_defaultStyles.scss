@@ -8,6 +8,16 @@ input:focus {
     outline: none;
 }
 
+.btn_pag {
+    background-color: transparent;
+    color: $color_principal;
+}
+
+.btn_pag:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
 .btn_cerrar {
     background-color: $color_principal;
     color: $color_secundario;

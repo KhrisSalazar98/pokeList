@@ -9,8 +9,9 @@ import { verPokemon, verDetallesPokemon, searchResult } from "../redux/features/
 
 import Loading from '../components/Loading';
 
-import {imgs, imgs2} from "../assets/js/pokeImages";
+import {imgs} from "../assets/js/pokeImages";
 import ModalVerPokemon from './ModalVerPokemon';
+import Paginacion from './Paginacion';
 
 const List = () => {
 
@@ -37,6 +38,10 @@ const List = () => {
         
     }
     
+    const [pagina, setPagina] = useState(1);
+    const [porPagina, setPorPagina] = useState(9);
+
+    const maximo = pokemonData.length / porPagina;
 
     return (
         <>
@@ -49,8 +54,8 @@ const List = () => {
 
                         <div className='my-5'>
                             <form onSubmit={handleSubmit}>
-                                <input onChange={(e) => setSearch(e.target.value)} className="border-0 px-3 py-2 rounded-start input_search" type="text" placeholder='Buscar por nombre' />
-                                <button type='submit' className='border-0 px-3 py-2 rounded-end btn_search'><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
+                                <input onChange={(e) => setSearch(e.target.value)} className="border-0 px-2 px-sm-3 py-2 rounded-start input_search" type="text" placeholder='Buscar por nombre' />
+                                <button type='submit' className='border-0 px-2 px-sm-3 py-2 rounded-end btn_search'><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
                             </form>
                         </div>
                         <br />
@@ -67,7 +72,10 @@ const List = () => {
                                         .includes(searchList.toLowerCase());
                                     }
                                 })
-                                .map((pokemon, index) => (
+                                .slice(
+                                    (pagina - 1) * porPagina,
+                                    (pagina - 1) * porPagina + porPagina
+                                ).map((pokemon, index) => (
                                     <div key={index} className='col-6 col-sm-6 col-md-4 mb-4'>
                                         <div className='rounded-3 pokeCard py-2'>
                                             <h3 className='text-center py-3 pokeName_title'>{pokemon.name}</h3>
@@ -88,8 +96,10 @@ const List = () => {
                         </div>
 
                     </div>
-
+                    
+                    <Paginacion pagina={pagina} setPagina={setPagina} maximo={maximo} />
                     <ModalVerPokemon />
+
 
                 </>
                 
