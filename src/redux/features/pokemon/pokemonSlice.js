@@ -48,7 +48,7 @@ export const pokemonSlice = createSlice({
         loading: false,
         error: null,
         searchData: null,
-        searchList: []
+        searchList: ""
     },
 
     reducers: {

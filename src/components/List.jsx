@@ -30,18 +30,18 @@ const List = () => {
         dispatch(verDetallesPokemon(name));
     }
 
+    const [pagina, setPagina] = useState(1);
+    const [porPagina, setPorPagina] = useState(9);
+
+    let maximo = pokemonData.length / porPagina;
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         
         dispatch(searchResult(search));
-        
-        
     }
-    
-    const [pagina, setPagina] = useState(1);
-    const [porPagina, setPorPagina] = useState(9);
 
-    const maximo = pokemonData.length / porPagina;
+    const longitudFilter = () => pokemonData.filter((pokemon) => pokemon.name.toLowerCase().includes(searchList.toLowerCase())).length
 
     return (
         <>
@@ -61,12 +61,43 @@ const List = () => {
                         <br />
 
                         <div className='row mt-5'>
+
                             {pokemonData &&
+
                                 pokemonData
                                 .filter((pokemon) => {
                                     if (searchList.length === 0) {
                                         return pokemon;
                                     } else {
+
+                                        if(longitudFilter() <= 9){
+                                            maximo = 1;
+                                        }
+                                
+                                        if(longitudFilter() > 9 && longitudFilter() < 19) {
+                                            maximo = 2;
+                                        }
+                                        
+                                        if(longitudFilter() > 18 && longitudFilter() < 28) {
+                                            maximo = 3;
+                                        }
+
+                                        if(longitudFilter() > 27 && longitudFilter() < 37) {
+                                            maximo = 4;
+                                        }
+
+                                        if(longitudFilter() > 36 && longitudFilter() < 46) {
+                                            maximo = 5;
+                                        }
+
+                                        if(longitudFilter() > 45 && longitudFilter() < 55) {
+                                            maximo = 6;
+                                        }
+
+                                        if(longitudFilter() > 54 && longitudFilter() < 64) {
+                                            maximo = 7;
+                                        }
+
                                         return pokemon.name
                                         .toLowerCase()
                                         .includes(searchList.toLowerCase());
@@ -76,7 +107,9 @@ const List = () => {
                                     (pagina - 1) * porPagina,
                                     (pagina - 1) * porPagina + porPagina
                                 ).map((pokemon, index) => (
+                                    
                                     <div key={index} className='col-6 col-sm-6 col-md-4 mb-4'>
+                                       
                                         <div className='rounded-3 pokeCard py-2'>
                                             <h3 className='text-center py-3 pokeName_title'>{pokemon.name}</h3>
                                             <div className='text-center'>
@@ -88,15 +121,24 @@ const List = () => {
                                         </div>
                                 
                                     </div>
-                            
+                                    
      
                                 ))
+                                
                             }
                         
                         </div>
 
                     </div>
-                    
+                            
+                    {
+                        
+                        console.log("Longitud "+pokemonData.filter((pokemon) => pokemon.name.toLowerCase().includes(searchList.toLowerCase())).length)
+
+                        
+                        
+                    }
+
                     <Paginacion pagina={pagina} setPagina={setPagina} maximo={maximo} />
                     <ModalVerPokemon />
 
