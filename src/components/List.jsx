@@ -49,7 +49,7 @@ const List = () => {
                 <Loading />
             ):
                 <>
-            
+                   
                     <div className='container my-5'>
 
                         <div className='my-5'>

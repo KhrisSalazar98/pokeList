@@ -1,4 +1,10 @@
 @media (min-width: 200px) {
+    
+    .modalContainer {
+        width: 160px;
+        height: 150px;
+    }
+    
     .icon_modal_title {
         display: none;
     }
@@ -37,6 +43,13 @@
 @media (min-width: 220px) {
     .icon_modal_title {
         display: inline;
+    }
+}
+
+@media (min-width: 350px) {
+    .modalContainer {
+        width: 250px;
+        height: 250px;
     }
 }
 
@@ -86,6 +99,11 @@
 
 
 @media (min-width: 992px) {
+
+    .modalContainer {
+        width: 300px;
+        height: 300px;
+    }
 
     .pokeName_title {
         font-size: 1.5rem;
