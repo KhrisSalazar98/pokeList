@@ -1,4 +1,8 @@
 @media (min-width: 200px) {
+
+    .imgLogo {
+        width: 40px;
+    }
     
     .modalContainer {
         width: 160px;
@@ -54,6 +58,11 @@
 }
 
 @media (min-width: 450px) {
+
+    .imgLogo {
+        width: 45px;
+    }
+
     .pokeName_title {
         font-size: 1rem;
     }
@@ -99,6 +108,10 @@
 
 
 @media (min-width: 992px) {
+
+    .imgLogo {
+        width: 60px;
+    }
 
     .modalContainer {
         width: 300px;
