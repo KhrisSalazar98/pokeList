@@ -1,0 +1,66 @@
+
+body {
+    font-family: $family;
+    background-color: $color_secundario;    
+}
+
+input:focus {
+    outline: none;
+}
+
+.btn_pag {
+    background-color: transparent;
+    color: $color_principal;
+}
+
+.btn_pag:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.btn_cerrar {
+    background-color: $color_principal;
+    color: $color_secundario;
+    border: solid 3px $color_secundario;
+    -webkit-box-shadow: $sombra_btn; 
+    box-shadow: $sombra_btn;
+    @include transition_elements();
+}
+
+.btn_cerrar:hover {
+    background-color: $color_secundario;
+    color: $color_principal;
+    border-color: $color_principal;
+}
+
+.color_principal {
+    color: $color_principal;
+}
+
+.color_hp {
+    color: $color_salud;
+}
+
+.color_atk {
+    color: $color_ataque;
+}
+
+.color_def {
+    color: $color_defensa;
+}
+
+.hr_modal {
+    color: $color_principal;
+}
+
+.input_search::placeholder {
+    font-style: italic;
+}
+
+.modal-header, .modal-footer {
+    border: none;
+}
+
+.modal-content{
+    background-color: $color_secundario;
+}

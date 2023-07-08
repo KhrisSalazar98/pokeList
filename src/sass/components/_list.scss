@@ -1,0 +1,45 @@
+@keyframes cardHover_animation {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-7px); }
+    50% { transform: translateY(0); }
+    75% { transform: translateY(-7px); }
+    100% { transform: translateY(0); }
+}
+
+.pokeCard {
+    background-color: $color_principal;
+    -webkit-box-shadow: $sombra_listElement; 
+    box-shadow: $sombra_listElement;
+    @include transition_elements();
+    
+}
+
+.pokeCard:hover {
+    animation: cardHover_animation 3s ease-out infinite;
+}
+
+.btn_search {
+    background-color: $color_principal;
+    color: $color_secundario;
+    -webkit-box-shadow: $sombra_btn_search; 
+    box-shadow: $sombra_btn_search;
+    @include transition_elements();
+}
+
+.btn_search:hover {
+    filter: brightness(200%);
+}
+
+.btn_verPokemon {
+    background-color: transparent;
+    color: $color_secundario;
+    border: solid 3px $color_secundario;
+    -webkit-box-shadow: $sombra_btn; 
+    box-shadow: $sombra_btn;
+    @include transition_elements();
+}
+
+.btn_verPokemon:hover {
+    background-color: $color_secundario;
+    color: $color_principal;
+}

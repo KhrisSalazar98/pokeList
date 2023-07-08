@@ -1,0 +1,144 @@
+@media (min-width: 200px) {
+
+    .imgLogo {
+        width: 40px;
+    }
+    
+    .modalContainer {
+        width: 160px;
+        height: 150px;
+    }
+    
+    .icon_modal_title {
+        display: none;
+    }
+
+    .input_search {
+        -webkit-box-shadow: $sombra_input_search; 
+        box-shadow: $sombra_input_search;
+        width: 75%;
+    }
+
+    .pokeName_title {
+        font-size: 0.8rem;
+    }
+
+    .img_pokeList {
+        width: 60px;
+    }
+
+    .btn_verPokemon .span_txtBtnVerPokemon {
+        display: none;
+    }
+
+    .carousel-item img {
+        width: 80px
+    }
+
+    .stat {
+        height: 80px;
+    }
+
+    .txt_heigthWidth {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 220px) {
+    .icon_modal_title {
+        display: inline;
+    }
+}
+
+@media (min-width: 350px) {
+    .modalContainer {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (min-width: 450px) {
+
+    .imgLogo {
+        width: 45px;
+    }
+
+    .pokeName_title {
+        font-size: 1rem;
+    }
+
+    .input_search {
+        width: 55%;
+    }
+
+    .img_pokeList {
+        width: 100px;
+    }
+
+    .btn_verPokemon .span_txtBtnVerPokemon {
+        display: inline;
+    }
+
+    .carousel-item img {
+        width: 120px
+    }
+
+    .stat {
+        height: 120px;
+    }
+}
+
+@media (min-width: 575px) {
+    .img_pokeList {
+        width: 140px;
+    }
+
+    .input_search {
+        width: 35%;
+    }
+
+    .carousel-item img {
+        width: 160px
+    }
+
+    .stat {
+        height: 160px;
+    }
+}
+
+
+@media (min-width: 992px) {
+
+    .imgLogo {
+        width: 60px;
+    }
+
+    .modalContainer {
+        width: 300px;
+        height: 300px;
+    }
+
+    .pokeName_title {
+        font-size: 1.5rem;
+    }
+
+    .input_search {
+        width: 25%;
+    }
+
+    .img_pokeList {
+        width: 180px;
+    }
+
+    .carousel-item img {
+        width: 200px
+    }
+
+    .stat {
+        height: 200px;
+    }
+
+    .txt_heigthWidth {
+        font-size: 1.2rem;
+    }
+}
