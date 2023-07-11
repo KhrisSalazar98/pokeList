@@ -6,6 +6,14 @@
     100% { transform: translateY(0); }
 }
 
+@keyframes txt_noResults_animation {
+    0% {transform: scale(0.8);}
+    25% {transform: scale(1);}
+    50% {transform: scale(0.8);}
+    75% {transform: scale(1);}
+    100% {transform: scale(0.8);}
+}
+
 .pokeCard {
     background-color: $color_principal;
     -webkit-box-shadow: $sombra_listElement; 
@@ -42,4 +50,12 @@
 .btn_verPokemon:hover {
     background-color: $color_secundario;
     color: $color_principal;
+}
+
+.txt_not_found {
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: $blanco;
+    animation: txt_noResults_animation 3s ease-out infinite;
 }

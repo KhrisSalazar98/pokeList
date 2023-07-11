@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faMagnifyingGlass, faCircleExclamation} from '@fortawesome/free-solid-svg-icons';
 
 import { verPokemon, verDetallesPokemon, searchResult } from "../redux/features/pokemon/pokemonSlice";
 
@@ -14,6 +14,8 @@ import ModalVerPokemon from './ModalVerPokemon';
 import Paginacion from './Paginacion';
 
 const List = () => {
+
+    const inputSearchRef = useRef();
 
     const [search, setSearch] = useState("");
 
@@ -39,12 +41,16 @@ const List = () => {
         e.preventDefault();
         
         dispatch(searchResult(search));
+        setSearch("");
+        inputSearchRef.current.value = "";
     }
 
     const longitudFilter = () => pokemonData.filter((pokemon) => pokemon.name.toLowerCase().includes(searchList.toLowerCase())).length
 
+
     return (
         <>
+            
             {loading ? (
                 <Loading />
             ):
@@ -54,7 +60,7 @@ const List = () => {
 
                         <div className='my-5'>
                             <form onSubmit={handleSubmit}>
-                                <input onChange={(e) => setSearch(e.target.value)} className="border-0 px-2 px-sm-3 py-2 rounded-start input_search" type="text" placeholder='Buscar por nombre' />
+                                <input ref={inputSearchRef} onChange={(e) => setSearch(e.target.value)} className="border-0 px-2 px-sm-3 py-2 rounded-start input_search" type="text" placeholder='Buscar por nombre' />
                                 <button type='submit' className='border-0 px-2 px-sm-3 py-2 rounded-end btn_search'><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
                             </form>
                         </div>
@@ -62,68 +68,75 @@ const List = () => {
 
                         <div className='row mt-5'>
 
-                            {pokemonData &&
-
-                                pokemonData
-                                .filter((pokemon) => {
-                                    if (searchList.length === 0) {
-                                        return pokemon;
-                                    } else {
-
-                                        if(longitudFilter() <= 9){
-                                            maximo = 1;
-                                        }
-                                
-                                        if(longitudFilter() > 9 && longitudFilter() < 19) {
-                                            maximo = 2;
-                                        }
-                                        
-                                        if(longitudFilter() > 18 && longitudFilter() < 28) {
-                                            maximo = 3;
-                                        }
-
-                                        if(longitudFilter() > 27 && longitudFilter() < 37) {
-                                            maximo = 4;
-                                        }
-
-                                        if(longitudFilter() > 36 && longitudFilter() < 46) {
-                                            maximo = 5;
-                                        }
-
-                                        if(longitudFilter() > 45 && longitudFilter() < 55) {
-                                            maximo = 6;
-                                        }
-
-                                        if(longitudFilter() > 54 && longitudFilter() < 64) {
-                                            maximo = 7;
-                                        }
-
-                                        return pokemon.name
-                                        .toLowerCase()
-                                        .includes(searchList.toLowerCase());
-                                    }
-                                })
-                                .slice(
-                                    (pagina - 1) * porPagina,
-                                    (pagina - 1) * porPagina + porPagina
-                                ).map((pokemon, index) => (
+                            {
+                                pokemonData && longitudFilter() >= 1 ?
                                     
-                                    <div key={index} className='col-6 col-sm-6 col-md-4 mb-4'>
-                                       
-                                        <div className='rounded-3 pokeCard py-2'>
-                                            <h3 className='text-center py-3 pokeName_title'>{pokemon.name}</h3>
-                                            <div className='text-center'>
-                                                <img className='img_pokeList' src={imgs.filter((pokeImg) => pokeImg.name === pokemon.name)[0].img} alt={pokemon.name} />
-                                            </div>
-                                            <div className='my-4 text-center'>
-                                                <button onClick={() => handleViewPokemon(pokemon.name)} className='px-2 px-sm-3 py-sm-2 rounded-pill btn_verPokemon' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><span className='span_icon'><FontAwesomeIcon icon={faEye} /></span> <span className='span_txtBtnVerPokemon'>Ver Pokemon</span></button>
-                                            </div>
-                                        </div>
+                                    pokemonData
+                                    .filter((pokemon) => {
+                                        if (searchList.length === 0) {
+                                            return pokemon;
+                                        } else {
+
+                                            if(longitudFilter() <= 9){
+                                                maximo = 1;
+                                            }
                                 
-                                    </div>
+                                            if(longitudFilter() > 9 && longitudFilter() < 19) {
+                                                maximo = 2;
+                                            }
+                                        
+                                            if(longitudFilter() > 18 && longitudFilter() < 28) {
+                                                maximo = 3;
+                                            }
+
+                                            if(longitudFilter() > 27 && longitudFilter() < 37) {
+                                                maximo = 4;
+                                            }
+
+                                            if(longitudFilter() > 36 && longitudFilter() < 46) {
+                                                maximo = 5;
+                                            }
+
+                                            if(longitudFilter() > 45 && longitudFilter() < 55) {
+                                                maximo = 6;
+                                            }
+
+                                            if(longitudFilter() > 54 && longitudFilter() < 64) {
+                                                maximo = 7;
+                                            }
+
+                                            return pokemon.name
+                                            .toLowerCase()
+                                            .includes(searchList.toLowerCase());
+                                        }
+                                    })
+                                    .slice(
+                                        (pagina - 1) * porPagina,
+                                        (pagina - 1) * porPagina + porPagina
+                                    ).map((pokemon, index) => (
+                                    
+                                        <div key={index} className='col-6 col-sm-6 col-md-4 mb-4'>
+                                       
+                                            <div className='rounded-3 pokeCard py-2'>
+                                                <h3 className='text-center py-3 pokeName_title'>{pokemon.name}</h3>
+                                                <div className='text-center'>
+                                                    <img className='img_pokeList' src={imgs.filter((pokeImg) => pokeImg.name === pokemon.name)[0].img} alt={pokemon.name} />
+                                                </div>
+                                                <div className='my-4 text-center'>
+                                                    <button onClick={() => handleViewPokemon(pokemon.name)} className='px-2 px-sm-3 py-sm-2 rounded-pill btn_verPokemon' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><span className='span_icon'><FontAwesomeIcon icon={faEye} /></span> <span className='span_txtBtnVerPokemon'>Ver Pokemon</span></button>
+                                                </div>
+                                            </div>
+                                
+                                        </div>
                                     
      
-                                ))
+                                    ))
+
+                                    
+                                    
+                                :(
+                                    <p className='text-center txt_not_found'><FontAwesomeIcon size="xl" className='me-1' icon={faCircleExclamation} />No se han encontrado criaturas pokémon.</p>
+                                )
                                 
                             }
                         
@@ -131,15 +144,8 @@ const List = () => {
 
                     </div>
                             
-                    {
-                        
-                        console.log("Longitud "+pokemonData.filter((pokemon) => pokemon.name.toLowerCase().includes(searchList.toLowerCase())).length)
-
-                        
-                        
-                    }
-
-                    <Paginacion pagina={pagina} setPagina={setPagina} maximo={maximo} />
+                    
+                    {pokemonData && longitudFilter() >= 1 && <Paginacion pagina={pagina} setPagina={setPagina} maximo={maximo} />}
                     <ModalVerPokemon />
 
 
