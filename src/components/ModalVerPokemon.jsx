@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPersonArrowUpFromLine, faArrowsLeftRightToLine, faEye, faArrowUpRightDots, faHeart, faShieldHalved, faMeteor, faChildReaching, faAddressCard } from '@fortawesome/free-solid-svg-icons';
+import { faPersonArrowUpFromLine, faArrowsLeftRightToLine, faEye, faArrowUpRightDots, faHeart, faShieldHalved, faMeteor, faChildReaching, faAddressCard, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import {imgs} from '../assets/js/pokeImages';
 
@@ -17,7 +17,9 @@ const ModalVerPokemon = () => {
                 <div className="modal-content">
                     <div className="modal-header">
                         <h2 className="modal-title" id="exampleModalLabel"><span className='icon_modal_title'><FontAwesomeIcon icon={faAddressCard} /></span> Detalles de {searchData !== null && searchData.name}</h2>
-                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" className="bg-transparent border-0" data-bs-dismiss="modal" aria-label="Close">
+                            <FontAwesomeIcon size="2xl" icon={faXmark} />
+                        </button>
                     </div>
                     <div className="modal-body">
 
@@ -130,9 +132,9 @@ const ModalVerPokemon = () => {
                                 </div>
 
 
-                                <div className='mt-5 mb-3 text-end'>
+                                {/* <div className='mt-5 mb-3 text-end'>
                                     <button type="button" className="px-2 px-sm-3 py-sm-2 rounded-pill btn_cerrar" data-bs-dismiss="modal">Cerrar</button>
-                                </div>
+                                </div> */}
 
                                 
                             
