@@ -48,7 +48,7 @@ const List = () => {
             setInput(1);
         }
 
-        if(search ==! "") {
+        if(search ===! "") {
             maximo = pokemonData.length / porPagina;
         }
         
@@ -63,7 +63,7 @@ const List = () => {
 
     return (
         <>
-            
+
             {loading ? (
                 <Loading />
             ):
