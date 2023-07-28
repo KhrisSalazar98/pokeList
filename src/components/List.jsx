@@ -28,17 +28,29 @@ const List = () => {
     }, [dispatch]);
 
 
-    const handleViewPokemon = (name) => {
-        dispatch(verDetallesPokemon(name));
-    }
-
     const [pagina, setPagina] = useState(1);
+    const [input, setInput] = useState (1);
     const [porPagina, setPorPagina] = useState(9);
+
+    const handleViewPokemon = (name) => {
+        
+        dispatch(verDetallesPokemon(name));
+
+    }
 
     let maximo = pokemonData.length / porPagina;
     
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if(pagina >= 2){
+            setPagina(1);
+            setInput(1);
+        }
+
+        if(search ==! "") {
+            maximo = pokemonData.length / porPagina;
+        }
         
         dispatch(searchResult(search));
         setSearch("");
@@ -47,6 +59,7 @@ const List = () => {
 
     const longitudFilter = () => pokemonData.filter((pokemon) => pokemon.name.toLowerCase().includes(searchList.toLowerCase())).length
 
+    // console.log(pagina);
 
     return (
         <>
@@ -60,7 +73,7 @@ const List = () => {
 
                         <div className='my-5'>
                             <form onSubmit={handleSubmit}>
-                                <input ref={inputSearchRef} onChange={(e) => setSearch(e.target.value)} className="border-0 px-2 px-sm-3 py-2 rounded-start input_search" type="text" placeholder='Buscar por nombre' />
+                                <input ref={inputSearchRef} onChange={(e) => setSearch(e.target.value)} className="border-0 px-2 px-sm-3 py-2 rounded-start input_search" type="text" placeholder='Buscar Pokemon' />
                                 <button type='submit' className='border-0 px-2 px-sm-3 py-2 rounded-end btn_search'><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
                             </form>
                         </div>
@@ -145,7 +158,7 @@ const List = () => {
                     </div>
                             
                     
-                    {pokemonData && longitudFilter() >= 1 && <Paginacion pagina={pagina} setPagina={setPagina} maximo={maximo} />}
+                    {pokemonData && longitudFilter() >= 1 && <Paginacion pagina={pagina} setPagina={setPagina} input={input} setInput={setInput} maximo={maximo} />}
                     <ModalVerPokemon />
 
 
