@@ -18,21 +18,6 @@ input:focus {
     pointer-events: none;
 }
 
-// .btn_cerrar {
-//     background-color: $color_principal;
-//     color: $color_secundario;
-//     border: solid 3px $color_secundario;
-//     -webkit-box-shadow: $sombra_btn; 
-//     box-shadow: $sombra_btn;
-//     @include transition_elements();
-// }
-
-// .btn_cerrar:hover {
-//     background-color: $color_secundario;
-//     color: $color_principal;
-//     border-color: $color_principal;
-// }
-
 .color_principal {
     color: $color_principal;
 }
@@ -45,8 +30,20 @@ input:focus {
     color: $color_ataque;
 }
 
+.color_esp_atk {
+    color: $color_ataque_especial;
+}
+
 .color_def {
     color: $color_defensa;
+}
+
+.color_esp_def {
+    color: $color_defensa_especial;
+}
+
+.color_velocidad {
+    color: $color_velocidad;
 }
 
 .hr_modal {

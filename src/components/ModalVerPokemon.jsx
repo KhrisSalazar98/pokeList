@@ -2,13 +2,15 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPersonArrowUpFromLine, faArrowsLeftRightToLine, faEye, faArrowUpRightDots, faHeart, faShieldHalved, faMeteor, faChildReaching, faAddressCard, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faPersonArrowUpFromLine, faArrowsLeftRightToLine, faEye, faArrowUpRightDots, faHeart, faShieldHalved, faMeteor, faChildReaching, faAddressCard, faXmark, faDragon, faExplosion } from '@fortawesome/free-solid-svg-icons';
 
 import {imgs} from '../assets/js/pokeImages';
 
 const ModalVerPokemon = () => {
 
     const {searchData} = useSelector((state) => state.pokemon);
+
+    // console.log(searchData);
 
     return (
         
@@ -65,48 +67,18 @@ const ModalVerPokemon = () => {
                                             <hr className='w-50 color_principal' />
                                         </div>
 
-                                        <div id="carouselExampleAutoplaying2" className="carousel slide my-4" data-bs-ride="carousel">
-                                            <div className="carousel-inner">
-                                                <div className="carousel-item active text-center color_hp">
-                                                    <div className='stat d-flex justify-content-center align-items-center'>
-                                                        <div>
-                                                            <h4 className='text-center'>Salud</h4>
-                                                            <span className='txt_heigthWidth'><FontAwesomeIcon icon={faHeart} size="xl" /> = {searchData.stats[0].base_stat}</span>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div className="carousel-item text-center color_atk">
-                                                    <div className='stat d-flex justify-content-center align-items-center'>
-                                                        <div>
-                                                            <h4 className='text-center'>Ataque</h4>
-                                                            <span className='txt_heigthWidth'><FontAwesomeIcon icon={faMeteor} size="xl" /> = {searchData.stats[1].base_stat}</span>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                    
-                                                </div>
-                                                <div className="carousel-item text-center color_def">
-                                                    <div className="stat d-flex justify-content-center align-items-center">
-                                                        <div>
-                                                            <h4 className='text-center'>Defensa</h4>
-                                                            <span className='txt_heigthWidth'><FontAwesomeIcon icon={faShieldHalved} size="xl" /> = {searchData.stats[2].base_stat}</span>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                    
-                                                </div>
-                                        
-                                            </div>
-                                            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying2" data-bs-slide="prev">
-                                                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                <span className="visually-hidden">Previous</span>
-                                            </button>
-                                            <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying2" data-bs-slide="next">
-                                                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                                                <span className="visually-hidden">Next</span>
-                                            </button>
+
+                                        <div className='d-flex justify-content-center mt-5'>
+                                            <ul>
+                                                <li className='mb-2'>Salud: <br className='br_stats'/><span className='color_hp txt_heigthWidth'><FontAwesomeIcon icon={faHeart} size="lg" /> {searchData.stats[0].base_stat}</span></li>
+                                                <li className='mb-2'>Ataque: <br className='br_stats'/><span className='color_atk txt_heigthWidth'><FontAwesomeIcon icon={faMeteor} size="lg" /> {searchData.stats[1].base_stat}</span></li>
+                                                <li className='mb-2'>Ataque Especial: <br className='br_stats'/><span className='color_esp_atk txt_heigthWidth'><FontAwesomeIcon icon={faExplosion} size="lg" /> {searchData.stats[3].base_stat}</span></li>
+                                                <li className='mb-2'>Defensa: <br className='br_stats'/><span className='color_def txt_heigthWidth'><FontAwesomeIcon icon={faShieldHalved} size="lg" /> {searchData.stats[2].base_stat}</span></li>
+                                                <li className='mb-2'>Defensa Especial: <br className='br_stats'/><span className='color_esp_def txt_heigthWidth'><FontAwesomeIcon icon={faShieldHalved} size="lg" /> {searchData.stats[4].base_stat}</span></li>
+                                                <li className='mb-2'>Velocidad: <br className='br_stats'/><span className='color_velocidad txt_heigthWidth'><FontAwesomeIcon size="lg" icon={faDragon} /> {searchData.stats[5].base_stat}</span></li>
+                                            </ul>
                                         </div>
+
                                     </div>
                                 </div>
                                 
@@ -124,20 +96,14 @@ const ModalVerPokemon = () => {
                                     </div>
 
                                     <div className='col-12 col-sm-6 col-md-6 mb-3 d-flex justify-content-center flex-column'>
-                                        <img className='img_pokeList' src={imgs.filter((pokeImg) => pokeImg.name === searchData.name)[0].img} alt={searchData.name} />
+                                        <div className='text-center'>
+                                            <img className='img_pokeList' src={imgs.filter((pokeImg) => pokeImg.name === searchData.name)[0].img} alt={searchData.name} />
+                                        </div>
                                         <span>ID: {searchData.id}</span>
                                         <span>Nombre: {searchData.name}</span>   
                                     </div>
                                     
-                                </div>
-
-
-                                {/* <div className='mt-5 mb-3 text-end'>
-                                    <button type="button" className="px-2 px-sm-3 py-sm-2 rounded-pill btn_cerrar" data-bs-dismiss="modal">Cerrar</button>
-                                </div> */}
-
-                                
-                            
+                                </div>            
                             </>
                         )}
                         

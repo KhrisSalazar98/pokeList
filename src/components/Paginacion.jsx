@@ -1,11 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowLeft, faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-const Paginacion = ({pagina, setPagina, maximo}) => {
-
-    const [input, setInput] = useState (1);
+const Paginacion = ({pagina, setPagina, input, setInput, maximo}) => {
 
     const nextPage = () => {
         setInput (parseInt(input) + 1);

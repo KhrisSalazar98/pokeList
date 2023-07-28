@@ -55,6 +55,12 @@
     }
 }
 
+@media (min-width: 280px) {
+    .br_stats {
+        display: none;
+    }
+}
+
 @media (min-width: 350px) {
     .modalContainer {
         width: 250px;
